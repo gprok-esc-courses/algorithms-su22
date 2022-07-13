@@ -56,6 +56,15 @@ public class SinglyLinkedList {
         }
     }
 
+    public void printInline() {
+        ListNode iter = head;
+        while(iter != null) {
+            System.out.print(iter.getValue() + " ");
+            iter = iter.getNext();
+        }
+        System.out.println();
+    }
+
     public boolean exists(int v) {
         ListNode iter = head;
         while(iter != null) {
@@ -71,7 +80,8 @@ public class SinglyLinkedList {
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
         Random rnd = new Random();
-        for(int i = 0; i < 100; i++) {
+        for(int i = 0; i < 1000000; i++) {
+            System.out.println("i = " + i);
             int v = rnd.nextInt();
             list.addUnique(v);
         }
